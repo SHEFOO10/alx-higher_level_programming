@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+
+import py_compile
+import os
+
+input_file = os.environ.get('PYFILE')
+output_file = os.environ.get('PYFILEc')
+if input_file != None and output_file != None:
+    print(f'Compiling {input_file:s} ...')
+    py_compile.compile(input_file, cfile=output_file, dfile=None, doraise=False)
+
