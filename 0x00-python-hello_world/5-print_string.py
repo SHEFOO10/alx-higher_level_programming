@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 str = "Holberton School"
-print(f'{str[:9]:s}')
+print(3 * str)
+substr = str[:9];
+print(f'{substr:s}')
