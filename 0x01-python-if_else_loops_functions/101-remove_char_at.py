@@ -8,5 +8,3 @@ def remove_char_at(str, n):
 			if (i != n):
 			    str1 += str[i]
 	return str1
-
-print(remove_char_at("Chicago", 2))
