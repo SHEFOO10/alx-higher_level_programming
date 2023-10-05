@@ -5,19 +5,21 @@ if __name__ == '__main__':
     if (len(argv) < 4):
         print('Usage: ./100-my_calculator.py <a> <operator> <b>')
         exit(1)
+    a = int(argv[1])
+    b = int(argv[3])
     match argv[2]:
         case '+':
-            result = add(int(argv[1]), int(argv[3]))
-            print(f'{argv[1]} {argv[2]} {argv[3]} = {result}')
+            result = add(a, b)
+            print(f'{a} {argv[2]} {b} = {result}')
         case '-':
-            result = sub(int(argv[1]), int(argv[3]))
-            print(f'{argv[1]} {argv[2]} {argv[3]} = {result}')
+            result = sub(a, b)
+            print(f'{a} {argv[2]} {b} = {result}')
         case '*':
-            result = mul(int(argv[1]), int(argv[3]))
-            print(f'{argv[1]} {argv[2]} {argv[3]} = {result}')
+            result = mul(a, b)
+            print(f'{a} {argv[2]} {b} = {result}')
         case '/':
-            result = div(int(argv[1]), int(argv[3]))
-            print(f'{argv[1]} {argv[2]} {argv[3]} = {result}')
+            result = div(a, b)
+            print(f'{a} {argv[2]} {b} = {result}')
         case _:
             print('Unknown operator. Available operators: +, -, * and /')
             exit(1)
