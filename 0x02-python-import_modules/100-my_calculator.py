@@ -9,17 +9,13 @@ if __name__ == '__main__':
     b = int(argv[3])
     match argv[2]:
         case '+':
-            result = add(a, b)
-            print(f'{a} {argv[2]} {b} = {result}')
+            print(f'{a} {argv[2]} {b} = {add(a, b)}')
         case '-':
-            result = sub(a, b)
-            print(f'{a} {argv[2]} {b} = {result}')
+            print(f'{a} {argv[2]} {b} = {sub(a, b)}')
         case '*':
-            result = mul(a, b)
-            print(f'{a} {argv[2]} {b} = {result}')
+            print(f'{a} {argv[2]} {b} = {mul(a, b)}')
         case '/':
-            result = div(a, b)
-            print(f'{a} {argv[2]} {b} = {result}')
+            print(f'{a} {argv[2]} {b} = {div(a, b)}')
         case _:
             print('Unknown operator. Available operators: +, -, * and /')
             exit(1)
