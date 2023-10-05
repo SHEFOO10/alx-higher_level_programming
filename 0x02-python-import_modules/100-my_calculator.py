@@ -7,16 +7,10 @@ if __name__ == '__main__':
         exit(1)
     a = int(argv[1])
     b = int(argv[3])
-    match argv[2]:
-        case '+':
-            print(f'{a} {argv[2]} {b} = {add(a, b)}')
-        case '-':
-            print(f'{a} {argv[2]} {b} = {sub(a, b)}')
-        case '*':
-            print(f'{a} {argv[2]} {b} = {mul(a, b)}')
-        case '/':
-            print(f'{a} {argv[2]} {b} = {div(a, b)}')
-        case _:
-            print('Unknown operator. Available operators: +, -, * and /')
-            exit(1)
-    exit(0)
+    opt = {'+': add, '-': sub, '*': mul, '/': div}
+    if (argv[2] in opt.keys()):
+        print(f'{a} {argv[2]} {b} = {opt[argv[2]](a, b)}')
+        exit(0)
+    else:
+        print('Unknown operator. Available operators: +, -, * and /')
+        exit(1)
