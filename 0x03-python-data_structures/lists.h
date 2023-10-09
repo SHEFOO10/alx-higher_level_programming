@@ -26,7 +26,6 @@ void free_listint(listint_t *head);
 int is_palindrome(listint_t **head);
 int reversed_list(
 		listint_t **head,
-		listint_t *previous_node,
 		listint_t **list_reversed);
 
 #endif /* LISTS_H */
