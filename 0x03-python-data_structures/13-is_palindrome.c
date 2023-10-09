@@ -46,9 +46,7 @@ int is_palindrome(listint_t **head)
  * Return: numbers.
  */
 
-int reversed_list(
-	listint_t **head,
-	listint_t **list_reversed)
+int reversed_list(listint_t **head, listint_t **list_reversed)
 {
 	if (*head == NULL)
 		return (1);
