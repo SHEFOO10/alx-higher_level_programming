@@ -23,8 +23,6 @@ int is_palindrome(listint_t **head)
 		i++;
 		temp = temp->next;
 	}
-	if (i % 2 != 0)
-		return (0);
 	reversed_list(head, &list_reversed);
 
 	temp = list_reversed;
