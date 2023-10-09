@@ -41,7 +41,6 @@ int is_palindrome(listint_t **head)
  * reversed_list - reverse a singly linked list.
  *
  * @head: head of a linked list.
- * @previous_node: previous node.
  * @list_reversed: empty list to be filled.
  *
  * Return: numbers.
