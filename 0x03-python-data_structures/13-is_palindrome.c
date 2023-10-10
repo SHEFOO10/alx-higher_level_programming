@@ -14,15 +14,10 @@ int is_palindrome(listint_t **head)
 	listint_t *temp = *head;
 	listint_t *head_nodes = *head;
 	listint_t *list_reversed = NULL;
-	unsigned int i = 0;
 
 	if (*head == NULL)
 		return (1);
-	while (temp != NULL)
-	{
-		i++;
-		temp = temp->next;
-	}
+
 	reversed_list(head, &list_reversed);
 
 	temp = list_reversed;
