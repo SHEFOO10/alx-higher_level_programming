@@ -11,24 +11,33 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp = NULL;
-	listint_t *node = NULL;
-	listint_t *head_nodes = *head;
-	listint_t *list_reversed = NULL;
+	listint_t *slow = *head, *fast = *head, *temp = *head, *reversed = NULL;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
-
-	reversed_list(head, &list_reversed);
-	temp = list_reversed;
-	while (temp != NULL)
+	while (1)
 	{
-		node = temp;
-		if (temp->n != (head_nodes)->n)
+		reversed = fast->next;
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == NULL)
+		{
+			reversed_list(&slow);
+			break;
+		}
+		if (fast->next == NULL)
+		{
+			reversed_list(&slow->next);
+			reversed = fast;
+			break;
+		}
+	}
+	while (reversed != NULL)
+	{
+		if (reversed->n != temp->n)
 			return (0);
 		temp = temp->next;
-		head_nodes = head_nodes->next;
-		free(node);
+		reversed = reversed->next;
 	}
 	return (1);
 }
@@ -37,18 +46,21 @@ int is_palindrome(listint_t **head)
  * reversed_list - reverse a singly linked list.
  *
  * @head: head of a linked list.
- * @list_reversed: empty list to be filled.
  *
  * Return: numbers.
  */
 
-void reversed_list(listint_t **head, listint_t **list_reversed)
+void reversed_list(listint_t **head)
 {
-	listint_t *node;
+	listint_t *current = *head;
+	listint_t *previous = NULL;
+	listint_t *next = NULL;
 
-	if (*head == NULL)
-		return;
-	node = (*head)->next;
-	reversed_list(&node, list_reversed);
-	add_nodeint_end(list_reversed, (*head)->n);
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
+	}
 }
