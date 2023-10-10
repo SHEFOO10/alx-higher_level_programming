@@ -19,7 +19,6 @@ int is_palindrome(listint_t **head)
 		return (1);
 
 	reversed_list(head, &list_reversed);
-
 	temp = list_reversed;
 	while (temp != NULL)
 	{
@@ -41,14 +40,13 @@ int is_palindrome(listint_t **head)
  * Return: numbers.
  */
 
-int reversed_list(listint_t **head, listint_t **list_reversed)
+void reversed_list(listint_t **head, listint_t **list_reversed)
 {
 	listint_t *node;
-	if (*head == NULL)
-		return (1);
 
+	if (*head == NULL)
+		return;
 	node = (*head)->next;
 	reversed_list(&node, list_reversed);
 	add_nodeint_end(list_reversed, (*head)->n);
-	return (0);
 }
