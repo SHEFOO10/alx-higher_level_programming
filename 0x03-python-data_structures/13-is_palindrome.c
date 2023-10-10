@@ -11,7 +11,7 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp = *head;
+	listint_t *temp = NULL;
 	listint_t *head_nodes = *head;
 	listint_t *list_reversed = NULL;
 
