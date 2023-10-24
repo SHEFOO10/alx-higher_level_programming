@@ -10,9 +10,9 @@ class Square:
         __size (int): The size of the square.
 
     Methods:
-        __init__(self, size=0): Initializes a new Square instance with an optional size.
+        __init__(self, size=0): Initializes a new Square instance.
         size (property): Getter for the size attribute.
-        size (setter): Setter for the size attribute with type and value validation.
+        size (setter): Setter for the size attribute with validation.
         area(self): Calculates and returns the area of the square.
     """
     def __init__(self, size=0):
@@ -37,7 +37,7 @@ class Square:
     @size.setter
     def size(self, value):
         """
-        Setter for the size attribute with type and value validation.
+        Setter for the size attribute with validation.
 
         Args:
             value (int): The new size of the square.
