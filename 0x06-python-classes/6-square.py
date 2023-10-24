@@ -82,6 +82,3 @@ class Square:
             [print(' ', end='') for j in range(self.__position[0])]
             [print('#', end='') for j in range(self.__size)]
             print('')
-
-if __name__ == '__main__':
-    testclass = Square(-2)
