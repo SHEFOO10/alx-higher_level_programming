@@ -1,0 +1,34 @@
+========================
+how to use `0-add_integer.py`
+========================
+Pass two integers as argument
+
+and you will get the sum of them
+
+Examples:
+	
+>>> calc = __import__('0-add_integer')
+>>> calc.add_integer(1)
+99
+
+>>> calc.add_integer(0)
+98
+
+>>> calc.add_integer(100, -2)
+98
+
+>>> calc.add_integer(2)
+100
+
+>>> calc.add_integer(100.3, -2)
+98
+
+>>> calc.add_integer([])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> calc.add_integer(-2, -2)
+-4
+
+>>> calc.add_integer(3.4, 5.4)
+8
