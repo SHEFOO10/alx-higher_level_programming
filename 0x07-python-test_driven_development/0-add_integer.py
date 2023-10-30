@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" 
+"""
     add integer
 
     function to calc sum of the two integers
-    """
+"""
 
 
 def add_integer(a, b=98):

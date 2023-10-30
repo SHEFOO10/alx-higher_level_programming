@@ -1,18 +1,20 @@
-========================
-how to use `0-add_integer.py`
-========================
+===========================
+how to use 0-add_integer.py
+===========================
 Pass two integers as argument
 
 and you will get the sum of them
 
 Examples:
-	
->>> calc = __import__('0-add_integer')
->>> calc.add_integer(1)
-99
 
+>>> calc = __import__('0-add_integer')
+
+# Test case: Adding two positive numbers
 >>> calc.add_integer(0)
 98
+
+>>> calc.add_integer(1, 2)
+3
 
 >>> calc.add_integer(100, -2)
 98
@@ -27,8 +29,10 @@ Examples:
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> calc.add_integer(-2, -2)
--4
+>>> calc.add_integer('h')
+Traceback (most recent call last):
+TypeError: a must be an integer
 
->>> calc.add_integer(3.4, 5.4)
-8
+>>> calc.add_integer(1, 'a')
+Traceback (most recent call last):
+TypeError: b must be an integer
