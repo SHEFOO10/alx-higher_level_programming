@@ -1,0 +1,26 @@
+============================
+Tests For say_my_name.py
++++++++++++++++++++++++++++
+
+Import:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+One Argument:
+	>>> say_my_name("Sherif")
+	My name is Sherif 
+
+Two Arguments:
+	>>> say_my_name("Sherif", "Hamdy")
+	My name is Sherif Hamdy
+
+Passing number as argument:
+	>>> say_my_name(23, "Test")
+	Traceback (most recent call last):
+	...........................
+	TypeError: first_name must be a string
+
+Passing number as argument:
+	>>> say_my_name("test", 23)
+	Traceback (most recent call last):
+	...........................
+	TypeError: last_name must be a string
