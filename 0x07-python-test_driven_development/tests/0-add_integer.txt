@@ -13,7 +13,7 @@ Examples:
 >>> calc.add_integer(0)
 98
 
->>> add_integer(float('inf'), float('-inf'))
+>>> calc.add_integer(float('inf'), float('-inf'))
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
 
