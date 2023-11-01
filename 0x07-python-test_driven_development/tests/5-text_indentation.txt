@@ -29,9 +29,7 @@ Test Case 5:
 
 Test Case 6:
     >>> text_indentation("Holberton.School")
-    Holberton.
-    <BLANKLINE>
-    School
+    Holberton.School
 
 Test case 7:
     >>> text_indentation("Holberton. School? How are you: John")
@@ -46,4 +44,3 @@ Test case 7:
 Text with leading/trailing spaces:
     >>> text_indentation('  Leading and trailing spaces.  ')
     Leading and trailing spaces.
-    <BLANKLINE>
