@@ -32,3 +32,13 @@ Test Case 6:
     Holberton.
     <BLANKLINE>
     School
+
+Test case 7:
+    >>> text_indentation("Holberton. School? How are you: John")
+    Holberton.
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+    How are you:
+    <BLANKLINE>
+    John
