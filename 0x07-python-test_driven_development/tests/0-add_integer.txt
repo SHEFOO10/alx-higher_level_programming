@@ -13,11 +13,14 @@ Examples:
 >>> calc.add_integer(0)
 98
 
->>> calc.add_integer(1, 2)
-3
+>>> calc.add_integer(float('inf'), float('-inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
 
->>> calc.add_integer(100, -2)
-98
+
+>>> calc.add_integer(100, float('Nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
 
 >>> calc.add_integer(2)
 100

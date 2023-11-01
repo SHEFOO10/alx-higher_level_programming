@@ -1,0 +1,42 @@
+===========================
+how to use 2-matrix_divided.py
+===========================
+function that divides all elements of a matrix.
+
+matrix: list of lists of type int or float.
+div: number you want to divide with.
+
+Examples:
+
+>>> calc = __import__('2-matrix_divided')
+
+>>> calc.matrix_divided(0, 0)
+Traceback (most recent call last):
+..........................
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> calc.matrix_divided([], 2)
+Traceback (most recent call last):
+..........................
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> calc.matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> calc.matrix_divided([[]], 1)
+Traceback (most recent call last):
+.................................
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> calc.matrix_divided([[1, 2, 'h'], [4, 5, 6]], 3)
+Traceback (most recent call last):
+..................................
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> calc.matrix_divided([[1,2,4]], 2)
+[[0.5, 1.0, 2.0]]
+
+>>> calc.matrix_divided([[1,2,4]], 0)
+Traceback (most recent call last):
+..................................
+ZeroDivisionError: division by zero
