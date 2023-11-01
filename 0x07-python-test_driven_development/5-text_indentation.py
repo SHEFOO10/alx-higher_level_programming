@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-"""
-    a function that prints a text with 2 new lines
-    after each of these characters: ., ? and :
-"""
+"""text_indentation function"""
 
 
 def text_indentation(text):
-    """ prints a text with 2 new lines if it's ends with . , ? and : """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    text = text.strip().replace(". ", ".\n\n")\
-                       .replace("? ", "?\n\n")\
-                       .replace(": ", ":\n\n")
 
-    print(text, end="")
+    new_line = False
+    for char in text.strip():
+        if char == ' ':
+            if not new_line:
+                print(' ', end='')
+        elif char in ".?:":
+            print(char, end='\n\n')
+            new_line = True
+        else:
+            print(char, end='')
+            new_line = False

@@ -1,46 +1,50 @@
-+=++=======================++=
-Tests for 5-text_indentation
-+-=-+=-=-+=+=_=-=-+-=-+-=-==
+The 5-text_indentation test module.
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 
-Import:
+Using "text_indentation"
+++++++++++++++++++++++++++++++++++++
+
+Import function from module:
+
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-
-
-Test Case 2:
-    >>> text_indentation(343)
+Input not string:
+    >>> text_indentation(123)
     Traceback (most recent call last):
-    ...................................
+    ...
     TypeError: text must be a string
 
-
-Test Case 3:
-    >>> text_indentation()
-    Traceback (most recent call last):
-    ...................................
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
-
-Test Case 4:
+Empty input:
     >>> text_indentation('')
+    
+Text without periods, question marks, and colons:
+    >>> text_indentation('This text without periods - question marks - colons')
+    This text without periods - question marks - colons
 
-Test Case 5:
-    >>> text_indentation("hi - how are you - okay")
-    hi - how are you - okay
-
-Test Case 6:
-    >>> text_indentation("Holberton.School")
-    Holberton.School
-
-Test case 7:
-    >>> text_indentation("Holberton. School? How are you: John")
-    Holberton.
+Text with periods, question marks, and colons:
+    >>> text_indentation('This is a sentence. This is another sentence? And here is a sentence with a colon:')
+    This is a sentence.
     <BLANKLINE>
-    School?
+    This is another sentence?
     <BLANKLINE>
-    How are you:
+    And here is a sentence with a colon:
     <BLANKLINE>
-    John
 
 Text with leading/trailing spaces:
     >>> text_indentation('  Leading and trailing spaces.  ')
     Leading and trailing spaces.
+    <BLANKLINE>
+
+Text with multiple lines:
+    >>> text_indentation('This is line 1.This is line 2?And this is line 3:')
+    This is line 1.
+    <BLANKLINE>
+    This is line 2?
+    <BLANKLINE>
+    And this is line 3:
+    <BLANKLINE>
+
+int instead of string:
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    TypeError: text must be a string
