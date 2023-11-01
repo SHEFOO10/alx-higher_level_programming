@@ -42,3 +42,8 @@ Test case 7:
     How are you:
     <BLANKLINE>
     John
+
+Text with leading/trailing spaces:
+    >>> text_indentation('  Leading and trailing spaces.  ')
+    Leading and trailing spaces.
+    <BLANKLINE>

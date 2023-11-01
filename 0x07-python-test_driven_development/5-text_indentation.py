@@ -11,7 +11,8 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     text = text.replace(". ", ".")\
                .replace("? ", "?")\
-               .replace(": ", ":")
+               .replace(": ", ":").strip()
+
     print(text.replace(".", ".\n\n")
               .replace("?", "?\n\n")
               .replace(":", ":\n\n"), end='')
