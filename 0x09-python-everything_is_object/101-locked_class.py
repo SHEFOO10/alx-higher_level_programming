@@ -3,5 +3,5 @@
 
 
 class LockedClass:
-""" Locked Class """
+    """ Locked Class """
     __slots__ = ('first_name')
