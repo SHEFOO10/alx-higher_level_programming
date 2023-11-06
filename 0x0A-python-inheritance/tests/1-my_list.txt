@@ -6,25 +6,30 @@ Import:
     >>> MyList = __import__('1-my_list').MyList
 
 empty_list:
-    >>> obj = MyList([])
-    >>> obj.print_sorted()
+    >>> my_list = MyList([])
+    >>> print(my_list)
     []
 
 No argument given:
-    >>> obj = MyList()
-    >>> obj.print_sorted()
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
     []
 
 
 array of integers:
-    >>> obj = MyList([7, 9, 3, 2, 1])
-    >>> obj.print_sorted()
+    >>> my_list = MyList([7, 9, 3, 2, 1])
+    >>> my_list.print_sorted()
     [1, 2, 3, 7, 9]
 
 
 array of strings:
-    >>> obj = MyList(["Nour", "Sherif", 'Saif', 'Mohamed', 'Ahmed'])
-    >>> obj.print_sorted()
+    >>> my_list.clear()
+    >>> my_list.append("Nour")
+    >>> my_list.append("Sherif")
+    >>> my_list.append("Mohamed")
+    >>> my_list.append("Ahmed")
+    >>> my_list.append("Saif")
+    >>> my_list.print_sorted()
     ['Ahmed', 'Mohamed', 'Nour', 'Saif', 'Sherif']
 
 
@@ -34,14 +39,14 @@ give the class more than one argument:
     TypeError: list expected at most 1 argument, got 2
 
 array with different types:
-    >>> obj = MyList([23, 10.5, (), 'Ahmed'])
-    >>> obj.print_sorted()
+    >>> my_list = MyList([23, 10.5, (), 'Ahmed'])
+    >>> my_list.print_sorted()
     Traceback (most recent call last):
     TypeError: '<' not supported between instances of 'tuple' and 'float'
 
 array with duplicated values:
-    >>> obj = MyList([1, 22, 3, 4, 13, -1, -2, 2, 2])
-    >>> obj.print_sorted()
+    >>> my_list = MyList([1, 22, 3, 4, 13, -1, -2, 2, 2])
+    >>> my_list.print_sorted()
     [-2, -1, 1, 2, 2, 3, 4, 13, 22]
 
 use list methods:
@@ -61,7 +66,7 @@ use list methods:
     []
 
 tring to add None value:
-    >>> my_list = MyList()
+    >>> my_list.clear()
     >>> my_list.append(3) 
     >>> my_list.append(50000) 
     >>> my_list.append(4000) 
@@ -84,6 +89,14 @@ negative values:
     >>> my_list.append(-423) 
     >>> my_list.print_sorted()
     [-5450, -540, -423, -3]
+
+    >>> my_list.remove(-423)
+    >>> my_list.print_sorted()
+    [-5450, -540, -3]
+
+original list not effected by the sort:
+    >>> print(my_list)
+    [-3, -540, -5450]
 
 trying to append infinity Number:
     >>> my_list.append(int('inf'))
