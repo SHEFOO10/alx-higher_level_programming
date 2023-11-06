@@ -3,20 +3,20 @@ tests for 1-my_list.py
 =======================
 
 Import:
-	>>> MyList = __import__('1-my_list').MyList
+    >>> MyList = __import__('1-my_list').MyList
 
 empty_list:
-	>>> obj = MyList([])
-	>>> obj.print_sorted()
-	[]
+    >>> obj = MyList([])
+    >>> obj.print_sorted()
+    []
 
 No argument given:
-	>>> obj = MyList()
-	>>> obj.print_sorted()
-	[]
+    >>> obj = MyList()
+    >>> obj.print_sorted()
+    []
 
 
 array of integers:
-	>>> obj = MyList([7, 9, 3, 2, 1])
-	>>> obj.print_sorted()
-	[1, 2, 3, 7, 9]
+    >>> obj = MyList([7, 9, 3, 2, 1])
+    >>> obj.print_sorted()
+    [1, 2, 3, 7, 9]
