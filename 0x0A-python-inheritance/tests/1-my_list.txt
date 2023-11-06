@@ -84,3 +84,13 @@ negative values:
     >>> my_list.append(-423) 
     >>> my_list.print_sorted()
     [-5450, -540, -423, -3]
+
+trying to append infinity Number:
+    >>> my_list.append(int('inf'))
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+appending undefined variable:
+    >>> my_list.append(NULL)
+    Traceback (most recent call last):
+    NameError: name 'NULL' is not defined
