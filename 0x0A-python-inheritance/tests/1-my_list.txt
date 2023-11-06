@@ -43,3 +43,29 @@ array with duplicated values:
     >>> obj = MyList([1, 22, 3, 4, 13, -1, -2, 2, 2])
     >>> obj.print_sorted()
     [-2, -1, 1, 2, 2, 3, 4, 13, 22]
+
+use list methods:
+    >>> my_list = MyList()
+    >>> my_list.append(3) 
+    >>> my_list.append(50000) 
+    >>> my_list.append(4000) 
+    >>> my_list.append(5465464)
+    >>> my_list.append(125)
+    >>> my_list.append(144)
+    >>> my_list.append(144000000000000)
+    >>> my_list.print_sorted()
+    [3, 125, 144, 4000, 50000, 5465464, 144000000000000]
+
+    >>> my_list.clear()
+    >>> my_list.print_sorted()
+    []
+
+tring to add None value:
+    >>> my_list = MyList()
+    >>> my_list.append(3) 
+    >>> my_list.append(50000) 
+    >>> my_list.append(4000) 
+    >>> my_list.append(None) 
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'NoneType' and 'int'
