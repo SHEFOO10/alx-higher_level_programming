@@ -3,22 +3,25 @@
 +++++++++++++++++++++
 
 
-Import :
+Import:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
 
-tests:
+Normal Tests:
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator("width", 89)
 
+test with string:
     >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
     TypeError: name must be an integer
 
+test with value equals 0:
     >>> bg.integer_validator("age", 0)
     Traceback (most recent call last):
     TypeError: age must be greater than 0
 
+with negative value:
     >>> bg.integer_validator("distance", -4)
     Traceback (most recent call last):
-    TypeError: age must be greater than 0
+    TypeError: distance must be greater than 0
