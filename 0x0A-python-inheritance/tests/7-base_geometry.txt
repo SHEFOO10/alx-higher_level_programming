@@ -20,7 +20,10 @@ area function:
 Normal Tests:
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator("width", 89)
+
     >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
 
 test with string:
     >>> bg.integer_validator("my_int", "John")
