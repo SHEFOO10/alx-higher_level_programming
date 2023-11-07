@@ -23,7 +23,7 @@ Normal Tests:
 
     >>> bg.integer_validator("age", True)
     Traceback (most recent call last):
-    TypeError: my_int must be an integer
+    TypeError: age must be an integer
 
 test with string:
     >>> bg.integer_validator("my_int", "John")
