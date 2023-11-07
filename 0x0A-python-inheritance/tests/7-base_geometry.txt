@@ -17,45 +17,44 @@ area function:
     Exception: area() is not implemented
 
 
-
 Normal Tests:
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator("width", 89)
 
 test with string:
-    >>> bg.integer_validator("name", "John")
+    >>> bg.integer_validator("my_int", "John")
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: my_int must be an integer
 
 test with value equals 0:
-    >>> bg.integer_validator("age", 0)
+    >>> bg.integer_validator("my_int", 0)
     Traceback (most recent call last):
-    TypeError: age must be greater than 0
+    TypeError: my_int must be greater than 0
 
 with negative value:
-    >>> bg.integer_validator("distance", -4)
+    >>> bg.integer_validator("my_int", -4)
     Traceback (most recent call last):
-    TypeError: distance must be greater than 0
+    TypeError: my_int must be greater than 0
 
 
 with None value:
-    >>> bg.integer_validator("name", None)
+    >>> bg.integer_validator("my_int", None)
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: my_int must be an integer
 
 different datatypes:
-    >>> bg.integer_validator("name", [1, 34, 3])
+    >>> bg.integer_validator("my_int", [1, 34, 3])
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: my_int must be an integer
 
-    >>> bg.integer_validator("name", {2, 3, 4})
+    >>> bg.integer_validator("my_int", {2, 3, 4})
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: my_int must be an integer
 
-    >>> bg.integer_validator("name", {'name': 3, 'age': 23})
+    >>> bg.integer_validator("my_int", {'name': 3, 'age': 23})
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: my_int must be an integer
 
-    >>> bg.integer_validator("name", (2, 34))
+    >>> bg.integer_validator("my_int", (2, 34))
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: my_int must be an integer
