@@ -25,3 +25,18 @@ with negative value:
     >>> bg.integer_validator("distance", -4)
     Traceback (most recent call last):
     TypeError: distance must be greater than 0
+
+give one argument:
+    >>> bg.integer_validator("distance")
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+with no arguments:
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+with None value:
+    >>> bg.integer_validator("name", None)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
