@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" 3. To JSON string """
+"4. From JSON string to Object"
 import json
 
 
-def to_json_string(my_str):
+def from_json_string(my_str):
     """
     function that
     returns the JSON representation of an object (string)
