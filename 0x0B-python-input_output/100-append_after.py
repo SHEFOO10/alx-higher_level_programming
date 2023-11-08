@@ -9,7 +9,7 @@ def append_after(filename="", search_string="", new_string=""):
     """
     text = ""
     with open(filename, 'r') as file:
-        for line in content:
+        for line in file:
             text += line
             if line.find(search_string) != -1:
                 text += new_string
