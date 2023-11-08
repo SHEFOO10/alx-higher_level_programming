@@ -18,7 +18,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if attrs is not None:
+        if attrs is not None and type(attrs) == list:
             filtered_dict = {
                 key: value for key, value in self.__dict__.items()
                 if key in attrs
@@ -31,6 +31,5 @@ class Student:
         """
         replaces all attributes of the Student instance
         """
-        self.first_name = json['first_name']
-        self.last_name = json['last_name']
-        self.age = json['age']
+        for key, value in json.items():
+            setattr(self, key, value)
