@@ -12,7 +12,7 @@ def append_after(filename="", search_string="", new_string=""):
         i = 0
         for line in content:
             if search_string in line:
-                lines.insert(i + 1, new_string)
+                content.insert(i + 1, new_string)
             i += 1
-        f.seek(0)
-        f.write("".join(lines))
+        file.seek(0)
+        file.write("".join(content))
