@@ -69,12 +69,14 @@ class Rectangle (Base):
         """
         prints in stdout the Rectangle instance with the character #
         """
-        print(''.join(
-            [
-                '#' if x != self.width - 1 else '#\n'
-                for row in range(self.height) for x in range(self.width)
-            ]
-        ), end='')
+        for y in range(self.y):
+            print('')
+        for row in range(self.height):
+            for x in range(self.x):
+                print(' ', end='')
+            for col in range(self.width):
+                print('#', end='')
+            print('')
 
     def __str__(self):
         return f'[Rectangle] ({self.id}) {self.x}/{self.y} - \
