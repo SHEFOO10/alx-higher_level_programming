@@ -45,6 +45,12 @@ class Base:
         """
         Returns an instance with all attributes already set
         """
-        obj = cls(1, 3, 10, 10)
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls.__name__ == "Rectangle":
+            obj = Rectangle(1, 1)
+        elif cls.__name__ == "Square":
+            obj = Square(1)
         obj.update(**dictionary)
         return obj
