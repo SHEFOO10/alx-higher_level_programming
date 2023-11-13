@@ -64,3 +64,14 @@ class Rectangle (Base):
     def area(self):
         """ returns the area value """
         return self.width * self.height
+
+    def display(self):
+        """
+        prints in stdout the Rectangle instance with the character #
+        """
+        print(''.join(
+            [
+                '#' if x != self.width - 1 else '#\n'
+                for row in range(self.height) for x in range(self.width)
+            ]
+        ), end='')
