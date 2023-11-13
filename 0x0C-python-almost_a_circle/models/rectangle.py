@@ -93,7 +93,6 @@ class Rectangle (Base):
         5th argument should be the y attribute
         """
         try:
-            print(args)
             self.id = args[0]
             self.width = args[1]
             self.height = args[2]
