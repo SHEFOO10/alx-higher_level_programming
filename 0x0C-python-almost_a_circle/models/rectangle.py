@@ -101,3 +101,6 @@ class Rectangle (Base):
         except IndexError:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        return self.__dict__
