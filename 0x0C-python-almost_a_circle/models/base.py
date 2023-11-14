@@ -54,3 +54,17 @@ class Base:
             obj = Square(1)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        If the file doesn’t exist, return an empty list
+        Otherwise, return a list of instances
+        the type of these instances depends on cls
+        """
+        try:
+            with open(f"{cls.__name__}.json", 'r') as f:
+                content = f.read()
+        except Exception:
+            return []
+        return list(map(lambda obj: cls.create(**obj), Base.from_json_string(content)))
