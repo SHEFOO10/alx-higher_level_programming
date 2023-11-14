@@ -67,4 +67,5 @@ class Base:
                 content = f.read()
         except Exception:
             return []
-        return list(map(lambda obj: cls.create(**obj), Base.from_json_string(content)))
+        return list(map(lambda obj: cls.create(**obj),
+                    Base.from_json_string(content)))
