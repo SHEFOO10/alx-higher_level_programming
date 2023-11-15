@@ -28,7 +28,7 @@ class Base:
             writes the JSON string representation of list_objs to a file
         """
         with open(f'{cls.__name__}.json', 'w', encoding='UTF-8') as f:
-            if list_objs is None:
+            if list_objs is None or list_objs == []:
                 json.dump([], f)
                 return
             f.write(Base.to_json_string(

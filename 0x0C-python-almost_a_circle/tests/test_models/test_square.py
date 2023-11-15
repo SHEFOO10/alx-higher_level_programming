@@ -149,12 +149,6 @@ class TestSquare(unittest.TestCase):
 		with open('Square.json', 'r') as f:
 			self.assertEqual(f.read(), '[]')
 
-	def test_square_save_to_file_with_empty_list(self):
-		Square.save_to_file([])
-		self.assertTrue(os.path.exists('Square.json'))
-		with open('Square.json', 'r') as f:
-			self.assertEqual(f.read(), '[]')
-
 	def test_square_save_to_file(self):
 		Square.save_to_file([Square(1)])
 		self.assertTrue(os.path.exists('Square.json'))
@@ -164,3 +158,9 @@ class TestSquare(unittest.TestCase):
 	def test_square_load_from_file(self):
 		objects = Square.load_from_file()
 		self.assertTrue(all(map(lambda obj: isinstance(obj, Square), objects)))
+
+	def test_square_save_to_file_empty(self):
+		Square.save_to_file([])
+		self.assertTrue(os.path.exists('Square.json'))
+		with open('Square.json', 'r') as file:
+			self.assertEqual(file.read(), '[]')
