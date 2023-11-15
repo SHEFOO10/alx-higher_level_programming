@@ -143,7 +143,7 @@ class TestSquare(unittest.TestCase):
 		obj = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
 		self.assertEqual(obj.to_dictionary(), {'id': 89, 'size': 1, 'x': 2, 'y': 3})
 
-	def test_square_save_to_file_with_None(self):
+	def test_square_save_to_file_None(self):
 		Square.save_to_file(None)
 		self.assertTrue(os.path.exists('Square.json'))
 		with open('Square.json', 'r') as f:
