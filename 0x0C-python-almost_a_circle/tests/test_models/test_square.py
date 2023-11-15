@@ -77,6 +77,15 @@ class TestSquare(unittest.TestCase):
 	def test_square__str__(self):
 		self.assertRegex(Square(1).__str__(), r"\[Square\] \(\d+\) 0/0 - 1")
 
+	def test_Square_save_to_file_None_value(self):
+		if os.path.exists('Square.json'):
+			os.remove('Square.json')
+		Square.save_to_file(None)
+		with open('Square.json', 'r') as file:
+			content = file.read()
+		self.assertEqual(content, '[]')
+		self.assertTrue(os.path.exists('Square.json'))
+
 	def test_square_to_dictionary(self):
 		obj = Square(3, id=10)
 		self.assertEqual(obj.to_dictionary(), {'id': 10, 'size': 3, 'x': 0, 'y': 0})
@@ -143,24 +152,21 @@ class TestSquare(unittest.TestCase):
 		obj = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
 		self.assertEqual(obj.to_dictionary(), {'id': 89, 'size': 1, 'x': 2, 'y': 3})
 
-	def test_square_save_to_file_None(self):
-		Square.save_to_file(None)
-		self.assertTrue(os.path.exists('Square.json'))
-		with open('Square.json', 'r') as f:
-			self.assertEqual(f.read(), '[]')
-
 	def test_square_save_to_file_v1(self):
 		Square.save_to_file([Square(1)])
 		self.assertTrue(os.path.exists('Square.json'))
 		with open('Square.json', 'r') as f:
 			self.assertRegex(f.read(), r'[{"id": \d+, "x": 0, "size": 1, "y": 0}]')
 
+	def test_square_save_data_to_file(self):
+		if os.path.exists('Square.json'):
+			os.remove('Square.json')
+		Square.save_to_file([])
+		with open('Square.json', 'r') as file:
+			content = file.read()
+		self.assertEqual(content, '[]')
+		self.assertTrue(os.path.exists('Square.json'))
+
 	def test_square_load_from_file(self):
 		objects = Square.load_from_file()
 		self.assertTrue(all(map(lambda obj: isinstance(obj, Square), objects)))
-
-	def test_square_save_to_file(self):
-		Square.save_to_file([])
-		self.assertTrue(os.path.exists('Square.json'))
-		with open('Square.json', 'r') as file:
-			self.assertEqual(file.read(), '[]')

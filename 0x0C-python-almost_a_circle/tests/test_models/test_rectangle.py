@@ -208,7 +208,7 @@ class TestRectangle(unittest.TestCase):
 		obj.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
 		self.assertEqual(obj.to_dictionary(), {'height': 2, 'id': 89, 'width': 1, 'x': 3, 'y': 4})
 
-	def test_Rectangle_save_file_with_None_value(self):
+	def test_Rectangle_save_to_file_None_value(self):
 		Rectangle.save_to_file(None)
 		self.assertTrue(os.path.exists('Rectangle.json'))
 		with open('Rectangle.json') as f:
