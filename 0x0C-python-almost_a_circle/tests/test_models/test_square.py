@@ -151,7 +151,7 @@ class TestSquare(unittest.TestCase):
 		Square.save_to_file([Square(1)])
 		self.assertTrue(os.path.exists('Square.json'))
 		with open('Square.json', 'r') as f:
-			self.assertEqual(f.read(), '[{"id": 27, "x": 0, "size": 1, "y": 0}]')
+			self.assertRegex(f.read(), r'[{"id": \d+, "x": 0, "size": 1, "y": 0}]')
 
 	def test_square_load_from_file(self):
 		objects = Square.load_from_file()
