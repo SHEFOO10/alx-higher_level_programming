@@ -1,11 +1,32 @@
 #!/usr/bin/python3
 """ Test Rectangle """
+import io
 import unittest
 from models.rectangle import Rectangle
 import os
+import sys
 
 
 class TestRectangle(unittest.TestCase):
+	@staticmethod
+	def capture_stdout(rect, method):
+		"""Captures and returns text printed to stdout.
+
+		Args:
+			rect (Rectangle): The Rectangle to print to stdout.
+			method (str): The method to run on rect.
+		Returns:
+			The text printed to stdout by calling method on sq.
+		"""
+		capture = io.StringIO()
+		sys.stdout = capture
+		if method == "print":
+			print(rect)
+		else:
+			rect.display()
+		sys.stdout = sys.__stdout__
+		return capture
+
 	def test_create_Rectangle(self):
 		obj = Rectangle(1, 2)
 		self.assertEqual(obj.width, 1)
@@ -115,18 +136,16 @@ class TestRectangle(unittest.TestCase):
 		obj = Rectangle(1, 1)
 		self.assertRegex(obj.__str__(), r"\[Rectangle\] \(\d+\) 0/0 - 1/1")
 
-	def test_Rectangle_display(self):
+	def test_display(self):
 		obj = Rectangle(2, 4)
 		obj.display()
+		self.assertEqual("##\n##\n##\n##\n", self.capture_stdout(obj, 'display').getvalue())
+
 
 	def test_Rectangle_display_with_x(self):
 		obj = Rectangle(2, 4, 2)
 		obj.display()
-
-	def test_Rectangle_display_with_x(self):
-		obj = Rectangle(6, 4)
-		obj.display()
-
+		self.assertEqual("  ##\n  ##\n  ##\n  ##\n", self.capture_stdout(obj, 'display').getvalue())
 	def test_Rectangle_to_dictionary(self):
 		obj = Rectangle(2, 4)
 		self.assertRegex(obj.to_json_string([obj.to_dictionary()]),
