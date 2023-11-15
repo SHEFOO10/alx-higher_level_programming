@@ -10,11 +10,19 @@ class TestSquare(unittest.TestCase):
 		obj = Square(1)
 		self.assertEqual(obj.size, 1)
 
+	def test_create_square_with_negative_size(self):
+		with self.assertRaises(ValueError):
+			try:
+				obj = Square(-1)
+			except ValueError as e:
+				self.assertEqual(e.__str__(), 'width must be > 0')
+				raise
+
 	def test_square_passing_x_with_the_size(self):
 		obj = Square(1, 2)
 		self.assertEqual(obj.x, 2)
 
-	def test_square_passing_x_with_the_size(self):
+	def test_square_passing_y_with_the_size(self):
 		obj = Square(1, 2, 3)
 		self.assertEqual(obj.y, 3)
 
