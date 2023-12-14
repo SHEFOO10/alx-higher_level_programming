@@ -18,3 +18,4 @@
 | Task | file | Description |
 |------|------|-------------|
 | 0. My privileges! | [0-privileges.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/1-create_database_if_missing.sql) | lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server (in localhost). |
+| 1. Root user | [1-create_user.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/1-create_user.sql) | creates the MySQL server user user_0d_1. |
