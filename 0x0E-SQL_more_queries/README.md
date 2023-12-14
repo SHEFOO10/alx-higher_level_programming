@@ -22,3 +22,4 @@
 | 2. Read user | [2-create_read_user.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/2-create_read_user.sql) | creates the database hbtn_0d_2 and the user user_0d_2. |
 | 3. Always a name | [3-force_name.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/3-force_name.sql) | creates the table force_name on your MySQL server.|
 | 4. ID can't be null | [4-never_empty.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/4-never_empty.sql) | creates the table id_not_null on your MySQL server.|
+| 5. Unique ID | [5-unique_id.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/5-unique_id.sql) | creates the table unique_id on your MySQL server.|
