@@ -33,3 +33,4 @@
 | 13. Number of shows by genre | [13-count_shows_by_genre.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/13-count_shows_by_genre.sql) | lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each. |
 | 14. My genres | [14-my_genres.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/14-my_genres.sql) | uses the hbtn_0d_tvshows database to lists all genres of the show Dexter. |
 | 15. Only Comedy | [15-comedy_only.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/15-comedy_only.sql) | lists all Comedy shows in the database hbtn_0d_tvshows. |
+| 16. List shows and genres | [16-shows_by_genre.sql](https://github.com/SHEFOO10/alx-higher_level_programming/tree/main/0x0D-SQL_introduction/16-shows_by_genre.sql) | lists all shows, and all genres linked to that show, from the database hbtn_0d_tvshows. |
