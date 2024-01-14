@@ -23,7 +23,7 @@ def get_state():
         print(state.id)
     else:
         print('Not found')
-
+    session.close()
 
 if __name__ == '__main__':
     get_state()
