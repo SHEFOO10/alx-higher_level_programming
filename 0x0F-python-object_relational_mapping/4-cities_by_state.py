@@ -13,7 +13,8 @@ def list_cities():
                          db=sys.argv[3],
                          port=3306)
     cursor = db.cursor()
-    query = "SELECT * FROM cities ORDER BY cities.id ASC"
+    query = """SELECT cities.id, cities.name, states.name FROM cities, states
+    WHERE states.id = cities.state_id ORDER BY cities.id ASC """
     cursor.execute(query)
 
     for record in cursor.fetchall():
