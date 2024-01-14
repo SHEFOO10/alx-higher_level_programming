@@ -14,7 +14,7 @@ def filter_states_by_name():
                          port=3306)
     cursor = db.cursor()
     cursor.execute('SELECT * FROM states \
-WHERE name = "{}" ORDER BY states.id ASC'.format(sys.argv[4]))
+WHERE name LIKE BINARY "{}" ORDER BY states.id ASC'.format(sys.argv[4]))
 
     for record in cursor.fetchall():
         print(record)
