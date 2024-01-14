@@ -22,5 +22,6 @@ def list_cities_on_specfic_state():
     # for record in cursor.fetchall():
     print(', '.join([city[0] for city in cursor.fetchall()]))
 
+
 if __name__ == '__main__':
     list_cities_on_specfic_state()
