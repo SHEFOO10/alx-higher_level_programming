@@ -4,6 +4,7 @@ import MySQLdb
 import sys
 
 def list_states():
+    """ list states from database """
     db = MySQLdb.connect(host='localhost',
                         user=sys.argv[1],
                         passwd=sys.argv[2],
