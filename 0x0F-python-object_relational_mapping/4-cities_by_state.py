@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" filter states from states table """
+""" list cities table """
 import MySQLdb
 import sys
 
 
 def list_cities():
-    """ filter states by it's name and avoid sql injection """
+    """ list all cities records """
 
     db = MySQLdb.connect(host='localhost',
                          user=sys.argv[1],
