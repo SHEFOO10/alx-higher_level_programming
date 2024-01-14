@@ -25,5 +25,6 @@ def get_state():
         print('Not found')
     session.close()
 
+
 if __name__ == '__main__':
     get_state()
