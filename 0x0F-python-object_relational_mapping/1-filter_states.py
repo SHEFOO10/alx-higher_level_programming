@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def list_states():
+def filter_states():
     """ list states from database """
 
     db = MySQLdb.connect(host='localhost',
@@ -21,4 +21,4 @@ def list_states():
 
 
 if __name__ == '__main__':
-    list_states()
+    filter_states()
