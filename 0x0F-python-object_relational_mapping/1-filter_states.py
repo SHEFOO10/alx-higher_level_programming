@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" select states from states table """
+""" filter states from states table """
 import MySQLdb
 import sys
 
 
 def filter_states():
-    """ list states from database """
+    """ filter states from database """
 
     db = MySQLdb.connect(host='localhost',
                          user=sys.argv[1],
@@ -15,7 +15,7 @@ def filter_states():
     cursor = db.cursor()
 
     cursor.execute('SELECT * FROM states \
-        WHERE name LIKE "N%" ORDER BY states.id ASC')
+        WHERE name LIKE BINARY "N%" ORDER BY states.id ASC')
     for record in cursor.fetchall():
         print(record)
 
