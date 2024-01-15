@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+from sqlalchemy import create_engine
 from model_state import State, Base
 from model_city import City
-from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sys import argv
 
@@ -13,8 +13,8 @@ def list_cities():
         argv[2],
         argv[3]
     ))
-    Base.metadata.create_all(engine)
     session = Session(bind=engine)
+    Base.metadata.create_all(engine)
 
     cities = session.query(State, City).join(City).order_by(City.id).all()
     for state, city in cities:
