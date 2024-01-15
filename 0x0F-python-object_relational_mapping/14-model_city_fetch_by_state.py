@@ -13,8 +13,8 @@ def list_cities():
         argv[2],
         argv[3]
     ))
-    session = Session(bind=engine)
     Base.metadata.create_all(engine)
+    session = Session(bind=engine)
 
     cities = session.query(State, City).join(City).order_by(City.id).all()
     for state, city in cities:
