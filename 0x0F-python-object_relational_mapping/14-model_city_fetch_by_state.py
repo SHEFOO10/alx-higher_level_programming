@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" list cities on specific state """
 from sqlalchemy import create_engine
 from model_state import State, Base
 from model_city import City
