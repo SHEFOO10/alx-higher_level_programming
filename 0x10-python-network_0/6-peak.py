@@ -20,8 +20,10 @@ def find_peak_recursive(integers, low, high):
 
     mid = (low + high) // 2
 
-    if (integers[mid] >= integers[mid + 1] and
-        integers[mid] >= integers[mid - 1]):
+    if (
+        integers[mid] >= integers[mid + 1] and
+        integers[mid] >= integers[mid - 1]
+            ):
         return integers[mid]
     elif (integers[mid] < integers[mid + 1]):
         return find_peak_recursive(integers, mid + 1, high)
