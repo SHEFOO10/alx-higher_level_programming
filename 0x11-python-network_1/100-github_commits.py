@@ -15,12 +15,13 @@ if __name__ == '__main__':
         'X-GitHub-Api-Version': '2022-11-28'
     }
     with requests.get(
-                  'https://api.github.com/repos/{}/{}/commits'
+                  'https://api.github.com/repos/{}/{}/commits?per_page=10'
                   .format(sys.argv[1], sys.argv[2]),
                   headers=headers
                 ) as res:
         for commit in res.json():
-            print(commit.get('sha') + ':',
+            print('{}: {}'.format(
+                commit.get('sha'),
                   commit.get('commit')
                         .get('author')
-                        .get('name'))
+                        .get('name')))
