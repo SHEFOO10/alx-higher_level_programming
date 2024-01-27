@@ -16,7 +16,7 @@ if __name__ == '__main__':
     }
     with requests.get(
                   'https://api.github.com/repos/{}/{}/commits?per_page=10'
-                  .format(sys.argv[1], sys.argv[2]),
+                  .format(sys.argv[2], sys.argv[1]),
                   headers=headers
                 ) as res:
         for commit in res.json():
