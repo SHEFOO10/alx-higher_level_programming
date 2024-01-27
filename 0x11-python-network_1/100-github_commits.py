@@ -20,4 +20,7 @@ if __name__ == '__main__':
                   headers=headers
                 ) as res:
         for commit in res.json():
-            print(commit.get('sha') + ':', commit.get('author').get('login'))
+            print(commit.get('sha') + ':',
+                  commit.get('commit')
+                        .get('author')
+                        .get('name'))
