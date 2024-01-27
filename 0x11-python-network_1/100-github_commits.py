@@ -15,7 +15,7 @@ if __name__ == '__main__':
         'X-GitHub-Api-Version': '2022-11-28'
     }
     with requests.get(
-                  'https://api.github.com/repos/{}/{}/commits?per_page=10'
+                  'https://api.github.com/repos/{}/{}/commits'
                   .format(sys.argv[1], sys.argv[2]),
                   headers=headers
                 ) as res:
