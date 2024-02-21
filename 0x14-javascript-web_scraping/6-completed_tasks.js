@@ -3,17 +3,17 @@
 const request = require('request');
 const url = process.argv[2];
 
-request('https://jsonplaceholder.typicode.com/users', 'utf-8', (err, response, body) => {
-  let users, todos;
+request(url, 'utf-8', (err, response, body) => {
   if (err) {
     console.error(err);
   } else {
-    users = JSON.parse(body);
-    todos = {};
-    users.forEach((user) => {
-      request(url + `?userId=${user.id}`, (err, response, body) => {
-        if (err) { console.error(err); } else { todos = JSON.parse(body); console.log(todos); }
-      });
-    });
+    const obj = {};
+    const todos = JSON.parse(body);
+    for (const todo of todos) {
+      const userId = todo.userId.toString();
+      if (todo.completed === false) { continue; }
+      if (userId in obj) { obj[userId]++; } else { obj[userId] = 1; }
+    }
+    console.log(obj);
   }
 });
