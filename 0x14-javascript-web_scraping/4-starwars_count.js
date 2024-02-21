@@ -3,14 +3,14 @@
 const request = require('request');
 
 request.get(process.argv[2], (err, response, body) => {
+  let numberOfMovies = 0;
   if (err) {
     console.error(err);
   } else {
     const res = JSON.parse(body).results;
-    let numberOfMovies = 0;
-    res.forEach((movie) => {
-      numberOfMovies += movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/');
-    });
+    for (const movie of res) {
+      if (movie.characters.includes('http://swapi.co/api/people/18/')) { numberOfMovies++; }
+    }
     console.log(numberOfMovies);
   }
 });
