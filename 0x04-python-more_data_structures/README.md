@@ -114,10 +114,3 @@ Prototypes for functions written in this project:
   numeral to an integer.
   * The function assumes the number will be between 1-3999.
   * If the parameter `roman_string` is not a string or `None`, the function returns `0`.
-
-* **13. Weighted average!**
-  * [100-weight_average.py](./100-weight_average.py): Python function that returns the
-  weighted average of all integers in a list of tuples.
-  * Tuple format: `(<score>, <weight>)`.
-  * If the list is empty - returns `0`.
-  * Without importing modules.
