@@ -34,5 +34,5 @@ This work is part of the ALX Africa SE program, an online full-stack software en
 <p align="center">
   <img src="http://www.alxafrica.com/wp-content/uploads/2022/01/header-logo.png"
        alt="ALX Africa Logo"
-  >
+  > 
 </p>
